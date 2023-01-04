@@ -22,7 +22,7 @@ function useLocalStorage(itemName, initialValue) {
         } catch (e) {
           setError(e)
         }
-      }, 1000);
+      });
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
