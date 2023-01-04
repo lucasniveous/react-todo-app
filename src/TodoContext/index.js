@@ -11,6 +11,7 @@ function TodoProvider(props) {
         error} = useLocalStorage('TODOS_V1', []);
 
     const [search, setSearch] = React.useState('');
+    const [openModal, setOpenModal] = React.useState(false);
 
     //filter results of the array given the text of the search bar
     let searchedTodos = todos.filter(todo => {
@@ -53,7 +54,9 @@ function TodoProvider(props) {
             setSearch,
             searchedTodos,
             toggleTodoStatus,
-            deleteTodo
+            deleteTodo,
+            openModal,
+            setOpenModal
         }}>
             {props.children}
         </TodoContext.Provider>
