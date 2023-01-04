@@ -41,7 +41,7 @@ function AppUI() {
           <p>Holisss</p>
         </Modal>
       )}
-      <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal}/>
+      <CreateTodoButton setOpenModal={setOpenModal}/>
     </>
   );
 }
