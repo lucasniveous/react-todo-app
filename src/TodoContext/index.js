@@ -23,8 +23,8 @@ function TodoProvider(props) {
     const totalTodos = todos.length;
 
     //toggling todo status
-    const toggleTodoStatus = (text) => {
-        const idx = todos.findIndex(todo => todo.text === text);
+    const toggleTodoStatus = (id) => {
+        const idx = todos.findIndex(todo => todo.id === +id);
         const actualState = todos[idx].completed;
         const newState = !actualState; // toggling boolean value
         const newTodos  = [...todos];
@@ -38,15 +38,16 @@ function TodoProvider(props) {
         const newTodos  = [...todos];
         newTodos.push({
                     text,
-                    completed: false
+                    completed: false,
+                    id: Date.now()
                 });
         //updating todos
         saveTodos(newTodos);
     };
 
     //deleting todo
-    const deleteTodo = (text) => {
-        const idx = todos.findIndex(todo => todo.text === text);
+    const deleteTodo = (id) => {
+        const idx = todos.findIndex(todo => todo.id === +id);
         const newTodos = [...todos];
         newTodos.splice(idx, 1);
 

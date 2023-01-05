@@ -1,13 +1,12 @@
 .TodoItem {
-    background-color: #444444;
+    background-color: #087a97d0;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 24px;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin: 24px 0px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+    width: 500px;
   }
   
   .TodoItem-p {
@@ -15,7 +14,12 @@
     width: calc(100% - 120px);
     font-size: 18px;
     line-height: 24px;
-    font-weight: 400;
+    font-weight: 400px;
+  }
+
+  .TodoItem:has(.TodoItem-p--completed) {
+    background-color: #043a47d0;
+    color: rgb(107, 107, 107);
   }
   .TodoItem-p--completed {
     text-decoration: line-through;
